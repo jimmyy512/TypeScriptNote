@@ -1,0 +1,22 @@
+{
+  "name": "typescriptnote",
+  "version": "1.0.0",
+  "description": "npm install -g typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://jimmyy512:Hank20212@github.com/jimmyy512/TypeScriptNote.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimmyy512/TypeScriptNote/issues"
+  },
+  "homepage": "https://github.com/jimmyy512/TypeScriptNote#readme",
+  "dependencies": {
+    "mobx": "^5.9.4"
+  }
+}
