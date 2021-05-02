@@ -16,5 +16,7 @@ const getEnumKeyByEnumValue2 = <T extends { [index: string]: string }>(enumKey: 
     return keys.length > 0 ? keys[0] : null;
 }
 
+//鼠標移到Function看不出回傳型態
 console.log(getEnumKeyByEnumValue(TestEnum, "test1"));
+//鼠標移到Function上可以看出回傳型態
 console.log(getEnumKeyByEnumValue2(TestEnum, "test2"));
