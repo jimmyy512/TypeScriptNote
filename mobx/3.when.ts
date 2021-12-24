@@ -4,7 +4,7 @@ import { observable, computed, autorun, action, when } from "mobx";
 class MyResource {
     @observable num: number = 0;
 
-    private interval:number=null;
+    private interval: number = null;
     constructor() {
         when(
             // 一但
@@ -13,9 +13,9 @@ class MyResource {
             () => this.dispose()
         );
 
-        this.interval=setInterval(()=>{
+        this.interval = setInterval(() => {
             this.add();
-        },1000);
+        }, 1000);
     }
 
     @computed get isVisible() {
@@ -27,14 +27,14 @@ class MyResource {
 
     private dispose() {
         // 清理
-        console.log("dispose!!!! num:",this.num);
+        console.log("dispose!!!! num:", this.num);
         clearInterval(this.interval);
     }
 
-    public add(){
-        console.log("after add:",this.num);
+    public add() {
+        console.log("after add:", this.num);
         this.num++;
-        console.log("before add:",this.num);
+        console.log("before add:", this.num);
     }
 }
 

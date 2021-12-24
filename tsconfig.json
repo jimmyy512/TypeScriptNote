@@ -12,8 +12,7 @@
     "target": "es6",
     "experimentalDecorators": true,
     "skipLibCheck": true,
-    "outDir": "temp/vscode-dist",
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": true
-  }
+  },
 }
