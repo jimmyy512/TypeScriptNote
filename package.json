@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:eslint": "eslint \"**/*.ts\" --ignore-pattern node_modules/",
-    "lint:prettier": "prettier --write \"**/*.ts\"",
+    "lint:eslint-fix": "eslint \"**/*.ts\" --ignore-pattern node_modules/ --fix",
+    "lint:prettier": "prettier \"**/*.ts\"",
+    "lint:prettier-fix": "prettier --write \"**/*.ts\"",
     "lint:lint-staged": "lint-staged",
+    "lint:fix": "npm run lint:eslint-fix && npm run lint:prettier-fix",
     "prepare": "husky install",
     "validate": "npm run lint:eslint && npm run lint:prettier"
   },
