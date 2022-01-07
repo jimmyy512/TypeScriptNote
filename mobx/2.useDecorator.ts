@@ -1,25 +1,24 @@
-import {observable, computed,autorun} from "mobx";
+import { observable, computed, autorun } from 'mobx';
 
 class OrderLine {
-    @observable price = 0;
-    @observable amount = 1;
+  @observable price = 0;
+  @observable amount = 1;
 
-    constructor(price:number) {
-        this.price = price;
-    }
+  constructor(price: number) {
+    this.price = price;
+  }
 
-    @computed get total() {
-        console.log("computed total call:",this.price,this.amount);
-        return this.price * this.amount;
-    }
+  @computed get total() {
+    console.log('computed total call:', this.price, this.amount);
+    return this.price * this.amount;
+  }
 }
 
-const orderLine=new OrderLine(100);
-autorun(()=>{
-    console.log("autorun total:",orderLine.total);
-})
+const orderLine = new OrderLine(100);
+autorun(() => {
+  console.log('autorun total:', orderLine.total);
+});
 
-
-setInterval(()=>{
-    orderLine.price=Math.random()*100;
-},1000)
+setInterval(() => {
+  orderLine.price = Math.random() * 100;
+}, 1000);
