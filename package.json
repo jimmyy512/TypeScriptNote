@@ -4,7 +4,9 @@
   "description": "npm install -g typescript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:eslint": "eslint \"**/*.ts\" --ignore-pattern node_modules/ --fix",
+    "lint:prettier": "prettier --write \"**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,14 @@
   },
   "homepage": "https://github.com/jimmyy512/TypeScriptNote#readme",
   "dependencies": {
+    "eslint-config-prettier": "^8.3.0",
     "mobx": "^5.9.4"
   },
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@typescript-eslint/parser": "^5.9.0",
+    "eslint": "^8.6.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4"
   }
 }
