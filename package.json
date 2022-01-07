@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:eslint": "eslint \"**/*.ts\" --ignore-pattern node_modules/ --fix",
+    "lint:eslint": "eslint \"**/*.ts\" --ignore-pattern node_modules/",
     "lint:prettier": "prettier --write \"**/*.ts\"",
-    "prepare": "husky install"
+    "lint:lint-staged": "lint-staged",
+    "prepare": "husky install",
+    "validate": "npm run lint:eslint && npm run lint:prettier"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "@typescript-eslint/parser": "^5.9.0",
     "eslint": "^8.6.0",
     "husky": "^7.0.4",
+    "lint-staged": "^12.1.5",
     "prettier": "^2.5.1",
     "typescript": "^4.5.4"
   }
