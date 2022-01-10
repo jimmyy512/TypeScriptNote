@@ -1,4 +1,5 @@
 export default {};
+
 // such as { CN : "China", US : "USA" }
 const options = [
   { key: 'CN', displayName: 'China' },
@@ -10,4 +11,4 @@ const options = [
 const res = options.reduce((sum, it) => {
   return { ...{ [it.key]: it.displayName }, ...sum };
 }, {}) as { [key: string]: string };
-console.log('res:', res);
+console.log('res:', res.key);
