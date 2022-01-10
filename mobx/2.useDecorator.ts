@@ -1,3 +1,5 @@
+export default {};
+
 import { observable, computed, autorun } from 'mobx';
 
 class OrderLine {

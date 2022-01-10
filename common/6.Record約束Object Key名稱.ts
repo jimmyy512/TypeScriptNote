@@ -1,3 +1,4 @@
+export default {};
 type petsGroup = 'dog' | 'cat' | 'fish';
 interface IPetInfo {
   name: string;
@@ -21,4 +22,4 @@ const animalsInfo: IPets = {
   },
 };
 
-console.log(animalsInfo.dog);
+console.log(animalsInfo.cat);

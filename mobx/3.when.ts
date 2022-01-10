@@ -1,3 +1,5 @@
+export default {};
+
 import { observable, computed, autorun, action, when } from 'mobx';
 //ctrl+alt+n 開始運行
 //ctrl+alt+m 中止運行

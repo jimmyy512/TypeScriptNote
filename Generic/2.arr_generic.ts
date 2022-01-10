@@ -1,3 +1,5 @@
+export default {};
+
 interface GameType1 {
   id: number;
   size: number;

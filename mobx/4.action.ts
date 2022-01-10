@@ -1,3 +1,5 @@
+export default {};
+
 import { observable, computed, autorun, action, when } from 'mobx';
 class Ticker {
   @observable tick = 0;

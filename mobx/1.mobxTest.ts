@@ -1,3 +1,5 @@
+export default {};
+
 import { observable, autorun, action } from 'mobx';
 
 const person = observable(
