@@ -1,3 +1,4 @@
+export default {};
 import { makeAutoObservable, reaction } from 'mobx';
 
 class Person {

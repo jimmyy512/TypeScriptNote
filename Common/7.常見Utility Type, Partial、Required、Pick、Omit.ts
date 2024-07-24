@@ -1,3 +1,4 @@
+export default {};
 // 範例1
 /**
  * @Partial <T> 透過Partial包裝的參數,所有key值會變成可選狀態(option)

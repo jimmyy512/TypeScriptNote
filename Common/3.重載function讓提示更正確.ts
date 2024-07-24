@@ -1,3 +1,4 @@
+export default {};
 //如果2,3行註解後,鼠標移到reverse上的型態提示會同時顯示number|string
 function reverse(x: number): number;
 function reverse(x: string): string;

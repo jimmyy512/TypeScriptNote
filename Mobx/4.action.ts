@@ -1,3 +1,5 @@
+export default {};
+
 import { makeAutoObservable, autorun } from 'mobx';
 
 class Ticker {

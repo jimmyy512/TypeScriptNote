@@ -1,3 +1,5 @@
+export default {};
+
 import { makeAutoObservable, when } from 'mobx';
 
 class MyResource {
