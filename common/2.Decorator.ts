@@ -1,5 +1,3 @@
-export default {};
-
 function classDecorator(target: any) {
   console.log('---classDecorator:');
   console.log(new target('cool'));

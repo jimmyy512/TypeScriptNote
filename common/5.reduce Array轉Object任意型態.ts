@@ -1,5 +1,3 @@
-export default {};
-
 // such as { CN : "China", US : "USA" }
 const options = [
   { key: 'CN', displayName: 'China' },

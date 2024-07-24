@@ -1,5 +1,3 @@
-export default {};
-
 enum Config {
   LiveBoard,
   SitUp,

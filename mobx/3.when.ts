@@ -1,17 +1,16 @@
-export default {};
+import { makeAutoObservable, when } from 'mobx';
 
-import { observable, computed, autorun, action, when } from 'mobx';
-//ctrl+alt+n 開始運行
-//ctrl+alt+m 中止運行
 class MyResource {
-  @observable num = 0;
+  num = 0;
+  interval: number;
 
-  private interval: number = null;
   constructor() {
+    makeAutoObservable(this);
+
     when(
-      // 一但
+      // 一旦
       () => !this.isVisible,
-      // 然後
+      // 然后
       () => this.dispose()
     );
 
@@ -20,21 +19,20 @@ class MyResource {
     }, 1000);
   }
 
-  @computed get isVisible() {
-    if (this.num >= 3) return false;
-    else return true;
+  get isVisible() {
+    return this.num < 3;
   }
 
-  private dispose() {
+  dispose() {
     // 清理
     console.log('dispose!!!! num:', this.num);
     clearInterval(this.interval);
   }
 
-  public add() {
-    console.log('after add:', this.num);
-    this.num++;
+  add() {
     console.log('before add:', this.num);
+    this.num++;
+    console.log('after add:', this.num);
   }
 }
 

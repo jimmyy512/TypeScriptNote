@@ -1,5 +1,3 @@
-export default {};
-
 enum TestEnum {
   TEST1 = 'test1',
   TEST2 = 'test2',
@@ -19,7 +17,7 @@ const getEnumKeyByEnumValue = (
 const getEnumKeyByEnumValue2 = <T extends { [index: string]: string }>(
   enumKey: T,
   enumValue: string
-): keyof T | null => {
+): keyof T => {
   const keys = Object.keys(enumKey).filter((it) => enumKey[it] === enumValue);
   return keys.length > 0 ? keys[0] : null;
 };

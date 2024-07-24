@@ -1,4 +1,3 @@
-export default {};
 // Type約束key
 type petsGroup = 'dog' | 'cat' | 'fish';
 interface IPetInfo {

@@ -1,34 +1,38 @@
-export default {};
+import { makeAutoObservable, reaction } from 'mobx';
 
-import { observable, autorun, action } from 'mobx';
+class Person {
+  name = 'John';
+  age = 10;
+  showAge = true;
 
-const person = observable(
-  {
-    // observable 属性:
-    name: 'John',
-    age: 42,
-    showAge: false,
-
-    // 计算属性:
-    get labelText() {
-      return this.showAge ? `${this.name} (age: ${this.age})` : this.name;
-    },
-
-    // 动作:
-    setAge(age: any) {
-      this.age = age;
-    },
-  },
-  {
-    setAge: action,
+  constructor() {
+    makeAutoObservable(this);
   }
+
+  get labelText() {
+    return this.showAge ? `${this.name} (age: ${this.age})` : this.name;
+  }
+
+  setAge(age: number) {
+    this.age = age;
+  }
+
+  setName(name: string) {
+    this.name = name;
+  }
+}
+
+const person = new Person();
+
+reaction(
+  () => person.labelText,
+  (res) => console.log('res:', res)
 );
 
-// 对象属性没有暴露 'observe' 方法,
-// 但不用担心, 'mobx.autorun' 功能更加强大
-autorun(() => console.log(person.labelText));
-
-person.name = 'Dave';
-// 输出: 'Dave'
-
 person.setAge(21);
+person.setName('Dave');
+
+setTimeout(() => {
+  person.setAge(30);
+  person.setName('asd');
+}, 1000);
