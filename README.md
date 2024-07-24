@@ -6,26 +6,36 @@
 
 ## 安裝運行環境
 
+需要先去安裝 bun  
+用 bun 指令去運行
+
+### Window 安裝指令
+
 ```sh=
-npm install -g typescript ts-node
+powershell -c "irm bun.sh/install.ps1 | iex"
+```
+
+### Linux 安裝指令
+
+```sh=
+curl -fsSL https://bun.sh/install | bash
 ```
 
 ## 推薦 Vscode 插件
 
-- Quokka.js
 - Code Runner
 
-## Quokka 套件
+#### 使用
 
-#### 執行當前開啟頁面
+先到 settings.json 添加
 
 ```
-ctrl + K Q
+  "code-runner.executorMap": {
+    "typescript": "bun"
+  },
 ```
 
-### Code Runner 套件
-
-#### 執行當前開啟頁面
+運行快捷鍵
 
 ```
 ctrl + F8
