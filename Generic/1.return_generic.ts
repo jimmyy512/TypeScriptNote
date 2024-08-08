@@ -7,7 +7,7 @@ enum TestEnum {
 
 //no generic
 const getEnumKeyByEnumValue = (
-  enumKey: { [index: string]: string },
+  enumKey: Record<string, string>,
   enumValue: string
 ) => {
   const keys = Object.keys(enumKey).filter((it) => enumKey[it] === enumValue);
@@ -15,7 +15,7 @@ const getEnumKeyByEnumValue = (
 };
 
 //use generic
-const getEnumKeyByEnumValue2 = <T extends { [index: string]: string }>(
+const getEnumKeyByEnumValue2 = <T extends Record<string, string>>(
   enumKey: T,
   enumValue: string
 ): keyof T => {
@@ -25,5 +25,6 @@ const getEnumKeyByEnumValue2 = <T extends { [index: string]: string }>(
 
 //鼠標移到Function看不出回傳型態
 console.log(getEnumKeyByEnumValue(TestEnum, 'test1'));
+
 //鼠標移到Function上可以看出回傳型態
 console.log(getEnumKeyByEnumValue2(TestEnum, 'test2'));

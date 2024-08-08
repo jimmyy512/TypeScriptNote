@@ -1,5 +1,6 @@
 export default {};
-// such as { CN : "China", US : "USA" }
+
+// 定義選項陣列
 const options = [
   { key: 'CN', displayName: 'China' },
   { key: 'US', displayName: 'USA' },
@@ -7,7 +8,9 @@ const options = [
   { key: 'EU', displayName: 'Eurozone' },
 ];
 
+// 使用 reduce 來生成物件映射
 const res = options.reduce((sum, it) => {
-  return { ...{ [it.key]: it.displayName }, ...sum };
-}, {}) as { [key: string]: string };
-console.log('res:', res.key);
+  return { ...sum, [it.key]: it.displayName };
+}, {});
+
+console.log('res:', res);

@@ -1,10 +1,13 @@
 export default {};
-// Type約束key
+
+// 使用 type 約束 key
 type petsGroup = 'dog' | 'cat' | 'fish';
+
 interface IPetInfo {
   name: string;
   age: number;
 }
+
 type IPets = Record<petsGroup, IPetInfo>;
 
 const animalsInfo: IPets = {
@@ -21,31 +24,40 @@ const animalsInfo: IPets = {
     age: 5,
   },
 };
+
 console.log(animalsInfo.cat);
 
-// Enum約束key
+// 使用 Enum 約束 key
 enum PlaceType {
   PARK = 'park',
   ZOO = 'zoo',
   OFFICE = 'office',
 }
+
 interface PlaceInfo {
   address: string;
   phone: string;
 }
+
 type PlaceRecord = Record<PlaceType, PlaceInfo>;
+
 const placeRecord: PlaceRecord = {
   [PlaceType.PARK]: {
-    address: 'foo1',
-    phone: 'bar',
+    address: 'PARK',
+    phone: 'bar1',
   },
   [PlaceType.ZOO]: {
-    address: 'foo2',
-    phone: 'bar',
+    address: 'ZOO',
+    phone: 'bar2',
   },
   [PlaceType.OFFICE]: {
-    address: 'foo3',
-    phone: 'bar',
+    address: 'OFFICE',
+    phone: 'bar3',
   },
 };
-console.log(placeRecord.office.address);
+
+// 確保 `PlaceType` 的鍵值一致性
+console.log(
+  placeRecord[PlaceType.OFFICE].address,
+  placeRecord[PlaceType.OFFICE].phone
+);
